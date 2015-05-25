@@ -2,14 +2,14 @@
 
 A naive JavaScript implementation of Enum and Mirror.
 
-## Enum
+## Mask
 
 ```javascript
-var Enum = require('enums').Enum;
+var Mask = require('enums').Mask;
 ```
 
 ```javascript
-var Access = Enum([
+var Access = Mask([
 	'USER',
 	'ADMIN',
 	'OWNER'
@@ -23,7 +23,7 @@ Boolean(Access.ADMIN & canDelete); // true
 ```
 
 ```javascript
-var NodeFilter = Enum([
+var NodeFilter = Mask([
 	'ELEMENTS',
 	'COMMENTS',
 	'ATTRIBUTES',
