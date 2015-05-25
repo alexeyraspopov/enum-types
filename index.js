@@ -1,5 +1,5 @@
 function Mask(keys, hasSum) {
-	var acc = hasSum ? { ALL: Math.pow(2, keys.length) - 1 } : {};
+	var acc = hasSum ? Object.create(null, { ALL: { value: Math.pow(2, keys.length) - 1 } }) : Object.create(null);
 
 	return Object.freeze(keys.reduce(function(acc, key, index) {
 		acc[key] = Math.pow(2, index);
@@ -20,7 +20,7 @@ function Enum(object) {
 		acc[acc[key] = value] = key;
 
 		return acc;
-	}, {}));
+	}, Object.create(null)));
 }
 
 function Mirror(list) {
@@ -29,7 +29,7 @@ function Mirror(list) {
 	return Object.freeze(keys.reduce(function(acc, key) {
 		acc[key] = key;
 		return acc;
-	}, {}));
+	}, Object.create(null)));
 }
 
 exports.Mask = Mask;
